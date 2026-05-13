@@ -33,31 +33,114 @@ const HomePage: React.FC = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative bg-white text-blue-900 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-200/30 rounded-full blur-3xl -translate-y-1/2" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl translate-y-1/3" />
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-[#046c59] h-[90vh]">
+        {/* Background Glow */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -left-20 w-[400px] h-[400px] bg-emerald-400/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-yellow-300/10 rounded-full blur-3xl" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32 text-center flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 rounded-full px-4 py-1.5 text-blue-500 text-xs font-medium mb-6 animate-pulse-soft">
-            <Pill size={14} /> Online Medicine Delivery
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 h-full">
+          <div className="grid lg:grid-cols-2 items-center gap-10 h-full">
+
+            {/* Left Content */}
+            <div className="text-center lg:text-left z-10">
+              <h1 className="text-white font-bold leading-tight text-4xl sm:text-5xl lg:text-6xl max-w-xl">
+                Your Trusted <br />
+                Online Pharmacy <br />
+                for Every Need
+              </h1>
+
+              <p className="mt-5 text-gray-200 text-base sm:text-lg max-w-md mx-auto lg:mx-0 leading-relaxed">
+                Order medicines, consult doctors online, and get doorstep
+                delivery within 24 hours.
+              </p>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
+                <Link
+                  to="/shop"
+                  className="px-7 py-3 bg-lime-300 hover:bg-lime-400 text-black font-semibold rounded-full transition-all duration-300 shadow-lg"
+                >
+                  Shop Now
+                </Link>
+
+                <Link
+                  to="/register"
+                  className="px-7 py-3 border border-white/40 hover:border-white text-white rounded-full transition-all duration-300"
+                >
+                  Explore More
+                </Link>
+              </div>
+
+              {/* Review Section */}
+              <div className="flex items-center gap-4 mt-10 justify-center lg:justify-start">
+                <div className="flex -space-x-3">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    className="w-10 h-10 rounded-full border-2 border-[#046c59] object-cover"
+                    alt=""
+                  />
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    className="w-10 h-10 rounded-full border-2 border-[#046c59] object-cover"
+                    alt=""
+                  />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    className="w-10 h-10 rounded-full border-2 border-[#046c59] object-cover"
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <div className="text-yellow-300 text-sm font-medium">
+                    ★ 4.9/5
+                  </div>
+                  <p className="text-gray-200 text-sm">
+                    Rated by 2,400+ families
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative h-full flex justify-end">
+              <img
+                src="https://res.cloudinary.com/medistore/image/upload/v1778688042/Gemini_Generated_Image_1aoypw1aoypw1aoy_lhql9l.png"
+                alt="Doctor"
+                className="absolute bottom-0 right-0 z-10 max-h-[850px] object-contain"
+              />
+
+              {/* Floating Product Card */}
+              <div className="absolute bottom-10 right-0 sm:right-10 bg-white rounded-2xl p-4 shadow-2xl flex items-center gap-4 w-[230px] z-20">
+                <div className="w-16 h-16 rounded-xl bg-gray-100 flex items-center justify-center">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4320/4320371.png"
+                    alt=""
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+
+                <div>
+                  <p className="text-xs text-gray-500">Recommended</p>
+                  <h4 className="text-sm font-semibold text-gray-800 leading-tight">
+                    Quamtrax <br />
+                    nutrition acid
+                  </h4>
+                </div>
+
+                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-lime-300 flex items-center justify-center">
+                  ↗
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-blue-900 leading-tight mb-6">
-            Trusted Healthcare,<br />
-            <span className="text-blue-600">delivered to you.</span>
-          </h1>
-          <p className="text-blue-700 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
-            Order medicines and healthcare essentials from the comfort of your home. Fast, safe, and reliable delivery.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/shop"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all shadow-xl shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-0.5">
-              Shop Now <ArrowRight size={18} />
-            </Link>
-            <Link to="/register"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border border-blue-200 hover:border-blue-400 text-blue-700 hover:text-blue-900 rounded-xl font-semibold transition-all hover:-translate-y-0.5">
-              Become a Seller
-            </Link>
+
+          {/* Background Text */}
+          <div className="absolute bottom-0 left-6 text-[90px] lg:text-[160px] font-bold text-white/5 leading-none pointer-events-none select-none">
+            PHARMACY
           </div>
         </div>
       </section>
