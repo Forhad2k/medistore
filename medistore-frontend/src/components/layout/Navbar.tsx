@@ -12,19 +12,20 @@ const Navbar: React.FC = () => {
   const [dropOpen, setDropOpen] = useState(false);
 
   const dashboardLink =
-    user?.role === "ADMIN"   ? "/admin" :
-    user?.role === "SELLER"  ? "/seller/dashboard" : "/orders";
+    user?.role === "ADMIN" ? "/admin" :
+      user?.role === "SELLER" ? "/seller/dashboard" : "/orders";
 
   return (
-    <header className="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-surface-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 bg-white backdrop-blur-xl border-b border-surface-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between gap-4">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
-          <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center shadow-lg shadow-brand-500/30">
-            <Pill size={16} className="text-white" />
-          </div>
-          <span className="font-display font-bold text-gray-100 text-lg hidden sm:block">MediStore</span>
+        <Link to="/" className="flex items-center flex-shrink-0">
+          <img
+            src="https://res.cloudinary.com/medistore/image/upload/v1778682442/logo_of_medistore_p8vauy.png"
+            alt="MediStore Logo"
+            className="h-16 my-2 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
